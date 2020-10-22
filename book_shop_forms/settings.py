@@ -16,6 +16,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'hidden-anchorage-33665.herokuapp.com']
 
 INSTALLED_APPS = [
     'library',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,6 +61,7 @@ WSGI_APPLICATION = 'book_shop_forms.wsgi.application'
 DATABASES = {
     'default':
         dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+
         if os.environ.get('DATABASE_URL') else
         {
             'ENGINE': 'django.db.backends.sqlite3',

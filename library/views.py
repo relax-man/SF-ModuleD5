@@ -8,15 +8,31 @@ from library.forms import AuthorForm
 from library.models import Author
 
 
+def home_page(request):
+    home_data = {
+        'title': 'Library'
+    }
+    return render(request, 'index.html', home_data)
+
 class AuthorEdit(CreateView):
     model = Author
     form_class = AuthorForm
     success_url = reverse_lazy('library:author_create')
     template_name = 'author_edit.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Book create'
+        return context
+
 class AuthorList(ListView):
     model = Author
     template_name = 'author_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Books list'
+        return context
 
 
 def create_author_many(request):

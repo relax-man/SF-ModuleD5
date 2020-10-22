@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% extends 'index.html' %}
 
-    <title>{{ title }}</title>
-</head>
-<body>
-    <div class="container mt-5">
-        <ul>
-            {% for author in object_list %}
-                <li>{{ author.full_name }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-</body>
-</html>
+{% block content %}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Birth year</th>
+            <th scope="col">Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in object_list %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ author.full_name }}</td>
+                <td>{{ author.birth_year }}</td>
+                <td>{{ author.country }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

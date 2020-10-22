@@ -1,3 +1,4 @@
 django
 psycopg2
+django-bootstrap4
 dj_database_url

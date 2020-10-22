@@ -1,9 +1,10 @@
 from django.urls import path
-from library.views import AuthorEdit, AuthorList, create_author_many
+from library import views
 
 app_name = 'library'
 urlpatterns = [
-    path('author/create/', AuthorEdit.as_view(), name="author_create"),
-    path('authors/', AuthorList.as_view(), name="authors_list"),
-    path('author/create_many/', create_author_many, name="author_create_many"),
+    path('', views.home_page, name="home"),
+    path('author/create/', views.AuthorEdit.as_view(), name="author_create"),
+    path('authors/', views.AuthorList.as_view(), name="authors_list"),
+    path('author/create_many/', views.create_author_many, name="author_create_many")
 ]
