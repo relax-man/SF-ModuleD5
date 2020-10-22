@@ -4,21 +4,19 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
 INSTALLED_APPS = [
     'library',
-    'mathfilters',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django_cleanup'
+    'django.contrib.staticfiles'
 ]
 
 
@@ -55,9 +53,7 @@ WSGI_APPLICATION = 'book_shop_forms.wsgi.application'
 
 
 DATABASES = {
-    'default': {
-        dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 
@@ -88,4 +84,4 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
