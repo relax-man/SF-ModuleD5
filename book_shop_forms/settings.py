@@ -3,10 +3,15 @@ import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = False
+if os.environ.get('SECRET_KEY'):
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    DEBUG = False
+else:
+    SECRET_KEY = open("secret_key.txt").read()
+    DEBUG = True
 
-ALLOWED_HOSTS = ['hidden-anchorage-33665.herokuapp.com']
+
+ALLOWED_HOSTS = ['127.0.0.1', 'hidden-anchorage-33665.herokuapp.com']
 
 
 INSTALLED_APPS = [
@@ -53,7 +58,13 @@ WSGI_APPLICATION = 'book_shop_forms.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default':
+        dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+        if os.environ.get('DATABASE_URL') else
+        {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+        }
 }
 
 
