@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Manage</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <form method="post">
+            {% csrf_token %}
+            {{ author_formset.management_form }}
+            {% for form in author_formset %}
+                {{ form.as_ul }} <br>
+            {% endfor %}
+            <input type="submit" value="Сохранить" />
+        </form>
+    </div>
+</body>
+</html>
