@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<style>
+    .table thead th {
+        vertical-align: middle;
+    }
+</style>
+
+{% with 'library:'|add:model|add:'_create' as form_url %}
+    <a href="{% url form_url %}">
+        <button class="btn btn-light mb-4">Add {{ model }}</button>
+    </a>
+{% endwith %}
+
+<table class="table table-hover table-bordered">
+    <thead class="thead-dark text-center">
+        <tr>
+            <th scope="col">#</th>
+            {% block tablehead %}{% endblock %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for object in object_list %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                {% block tablebody %}{% endblock %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

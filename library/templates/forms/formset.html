@@ -1,0 +1,35 @@
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<style type="text/css">
+    .row-button-delete {
+        margin-top: 1.9em;
+        line-height: 1.5em;
+        height: 2.5em;
+    }
+    .row-button-add {
+        margin-top: 0.8em;
+        line-height: 1.5em;
+        height: 2.5em;
+    }
+</style>
+
+{{ formset.management_form|crispy }}
+
+{% for form in formset.forms %}
+    {% crispy form %}
+{% endfor %}
+
+<br>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="{% static 'django-dynamic-formset/jquery.formset.js' %}"></script>
+<script type="text/javascript">
+    $('.formset_row-{{ formset.prefix }}').formset({
+        addText: 'Add address',
+        deleteText: 'Remove',
+        prefix: '{{ formset.prefix }}',
+        deleteCssClass: 'col btn btn-dark row-button-delete mx-1',
+        addCssClass: 'btn btn-light row-button-add'
+    });
+</script>

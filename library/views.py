@@ -2,10 +2,12 @@ from django.http.response import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.shortcuts import render
 
-from django.views.generic import CreateView, ListView
-from django.forms import formset_factory
-from library.forms import AuthorForm
-from library.models import Author
+from django.views.generic import ListView, CreateView
+from .utils import ObjectListMixin, ObjectCreateMixin
+from .forms import AuthorForm, BookForm, FriendForm, AddressFormSet
+from .models import Author, Book, Friend
+
+from django.db import transaction
 
 
 def home_page(request):
@@ -14,39 +16,64 @@ def home_page(request):
     }
     return render(request, 'index.html', home_data)
 
-class AuthorEdit(CreateView):
+
+class AuthorList(ObjectListMixin, ListView):
+    model = Author
+    template_name = 'author/author_list.html'
+
+
+class BookList(ObjectListMixin, ListView):
+    model = Book
+    template_name = 'book/book_list.html'
+    ordering = '-year_release'
+
+
+class FriendList(ObjectListMixin, ListView):
+    model = Friend
+    template_name = 'friend/friend_list.html'
+
+
+class AuthorCreate(ObjectCreateMixin, CreateView):
     model = Author
     form_class = AuthorForm
-    success_url = reverse_lazy('library:author_create')
-    template_name = 'author_edit.html'
+    template_name = 'author/author_edit.html'
+    success_url = reverse_lazy('library:author_list')
+
+
+class BookCreate(ObjectCreateMixin, CreateView):
+    model = Book
+    form_class = BookForm
+    template_name = 'author/author_edit.html'
+    success_url = reverse_lazy('library:book_list')
+
+
+class FriendCreate(ObjectCreateMixin, CreateView):
+    model = Friend
+    form_class = FriendForm
+    template_name = 'friend/friend_edit.html'
+    success_url = reverse_lazy('library:friend_list')
+
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Book create'
-        return context
+        data = super(FriendCreate, self).get_context_data(**kwargs)
+        if self.request.POST:
+            data['addresses'] = AddressFormSet(self.request.POST)
+        else:
+            data['addresses'] = AddressFormSet()
+        return data
 
-class AuthorList(ListView):
-    model = Author
-    template_name = 'author_list.html'
+    def form_valid(self, form):
+        context = self.get_context_data()
+        addresses = context['addresses']
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Books list'
-        return context
+        with transaction.atomic():
+            form.instance.created_by = self.request.user
 
+            if not form.is_valid() or not addresses.is_valid():
+                return self.form_invalid(form)
 
-def create_author_many(request):
-    AuthorFormSet = formset_factory(AuthorForm, extra=2)
+            self.object = form.save()
+            addresses.instance = self.object
+            addresses.save()
 
-    if request.method == "POST":
-        author_formset = AuthorFormSet(request.POST, request.FILES, prefix='authors')
-
-        if author_formset.is_valid():
-            for author_form in author_formset:
-                author_form.save()
-            return HttpResponseRedirect(reverse_lazy('library:authors_list'))
-
-    else:
-        author_formset = AuthorFormSet(prefix='authors')
-
-    return render(request, 'manage_authors.html', {'author_formset': author_formset})
+        return super(FriendCreate, self).form_valid(form)

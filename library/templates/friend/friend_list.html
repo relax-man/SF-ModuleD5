@@ -1,0 +1,45 @@
+{% extends 'table_display.html' %}
+
+{% block tablehead %}
+    <th scope="col">Avatar</th>
+    <th scope="col">Name</th>
+    <th scope="col">Address</th>
+    <th scope="col">Debtors</th>
+{% endblock %}
+
+{% block tablebody %}
+    <td>
+        {% if object.avatar %}
+            <div style="
+                    background-image: url({{ object.avatar.url }});
+                    background-size: cover;
+                    background-position: center;
+                    filter: grayscale(0.2) brightness(0.9);
+                    width: 6em;
+                    height: 6em;
+                 "
+            ></div>
+        {% else %}
+            <div style="
+                    background-color: #fff;
+                    width: 6em;
+                    height: 6em;
+                 "
+            ></div>
+        {% endif %}
+    </td>
+    <td>
+        {{ object.full_name }}
+    </td>
+    <td>
+        {% for address in object.address_set.all %}
+            {{ address }}<br>
+        {% endfor %}
+    </td>
+    <td>
+        {% for debt in object.debt_set.all %}
+            {{ debt.debtor }} - {{ debt.book }}<br>
+        {% endfor %}
+    </td>
+
+{% endblock %}

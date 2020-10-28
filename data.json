@@ -3,18 +3,18 @@
   "model": "library.author",
   "pk": 1,
   "fields": {
-    "full_name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u041f\u0443\u0448\u043a\u0438\u043d",
+    "full_name": "Александр Пушкин",
     "birth_year": 1799,
-    "country": "RU"
+    "country": "Russia"
   }
 },
 {
   "model": "library.author",
   "pk": 2,
   "fields": {
-    "full_name": "\u041d\u0438\u043a\u043e\u043b\u0430\u0439 \u0413\u043e\u0433\u043e\u043b\u044c",
+    "full_name": "Николай Гоголь",
     "birth_year": 1809,
-    "country": "RU"
+    "country": "Russia"
   }
 },
 {
@@ -23,16 +23,16 @@
   "fields": {
     "full_name": "David Salinger",
     "birth_year": 1919,
-    "country": "US"
+    "country": "United States"
   }
 },
 {
   "model": "library.author",
   "pk": 4,
   "fields": {
-    "full_name": "\u041c\u0438\u0445\u0430\u0438\u043b \u0411\u0443\u043b\u0433\u0430\u043a\u043e\u0432",
+    "full_name": "Михаил Булгаков",
     "birth_year": 1891,
-    "country": "RU"
+    "country": "Russia"
   }
 },
 {
@@ -41,7 +41,7 @@
   "fields": {
     "full_name": "George Orwell",
     "birth_year": 1903,
-    "country": "GB"
+    "country": "India"
   }
 },
 {
@@ -50,7 +50,198 @@
   "fields": {
     "full_name": "Patrick Suskind",
     "birth_year": 1949,
-    "country": "DE"
+    "country": "Germany"
+  }
+},
+{
+  "model": "library.author",
+  "pk": 9,
+  "fields": {
+    "full_name": "Фёдор Достоевский",
+    "birth_year": 1250,
+    "country": "Russia"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 1,
+  "fields": {
+    "full_name": "Николай Степанов",
+    "avatar": "users_avatars/pexels-birgit-held-1046125.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 2,
+  "fields": {
+    "full_name": "Антонио Фостер",
+    "avatar": "users_avatars/pexels-kaboompics-com-5834.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 3,
+  "fields": {
+    "full_name": "Ched Garni",
+    "avatar": "users_avatars/pexels-polina-zimmerman-3747481.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 15,
+  "fields": {
+    "full_name": "Danny Ocean",
+    "avatar": "users_avatars/14.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 17,
+  "fields": {
+    "full_name": "Kate Moss",
+    "avatar": "users_avatars/2.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 18,
+  "fields": {
+    "full_name": "Dan Melbrook",
+    "avatar": "users_avatars/6.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 22,
+  "fields": {
+    "full_name": "Fastor Candy",
+    "avatar": "users_avatars/7.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 23,
+  "fields": {
+    "full_name": "Johny Storm",
+    "avatar": "users_avatars/12.jpg"
+  }
+},
+{
+  "model": "library.friend",
+  "pk": 43,
+  "fields": {
+    "full_name": "Michael Scott",
+    "avatar": "users_avatars/4.jpg"
+  }
+},
+{
+  "model": "library.address",
+  "pk": 3,
+  "fields": {
+    "street": "Ипподромская 2",
+    "city": "Новосибирск",
+    "zipcode": "63041",
+    "country": "Russia",
+    "person": 3
+  }
+},
+{
+  "model": "library.address",
+  "pk": 6,
+  "fields": {
+    "street": "4586 Hilarian Drive",
+    "city": "Los Angeles",
+    "zipcode": "90071",
+    "country": "United States",
+    "person": 22
+  }
+},
+{
+  "model": "library.address",
+  "pk": 7,
+  "fields": {
+    "street": "1241 Hilarian Drive",
+    "city": "Los Angeles",
+    "zipcode": "90072",
+    "country": "United States",
+    "person": 23
+  }
+},
+{
+  "model": "library.address",
+  "pk": 9,
+  "fields": {
+    "street": "Нижегородского 18",
+    "city": "Москва",
+    "zipcode": "440170",
+    "country": "Russia",
+    "person": 23
+  }
+},
+{
+  "model": "library.address",
+  "pk": 18,
+  "fields": {
+    "street": "1831 Manhattan Street",
+    "city": "New York",
+    "zipcode": "50915",
+    "country": "United States",
+    "person": 43
+  }
+},
+{
+  "model": "library.address",
+  "pk": 19,
+  "fields": {
+    "street": "Тверская 18",
+    "city": "Москва",
+    "zipcode": "140123",
+    "country": "Russia",
+    "person": 1
+  }
+},
+{
+  "model": "library.address",
+  "pk": 20,
+  "fields": {
+    "street": "Геодезическая 48",
+    "city": "Волгоград",
+    "zipcode": "450815",
+    "country": "Russia",
+    "person": 2
+  }
+},
+{
+  "model": "library.address",
+  "pk": 21,
+  "fields": {
+    "street": "192 Groove Street",
+    "city": "Washington DC",
+    "zipcode": "89103",
+    "country": "United States",
+    "person": 15
+  }
+},
+{
+  "model": "library.address",
+  "pk": 22,
+  "fields": {
+    "street": "2361 Rost Avenue",
+    "city": "Washington DC",
+    "zipcode": "34511",
+    "country": "United States",
+    "person": 17
+  }
+},
+{
+  "model": "library.address",
+  "pk": 23,
+  "fields": {
+    "street": "1764 Lascome Street",
+    "city": "Boston",
+    "zipcode": "44012",
+    "country": "United States",
+    "person": 18
   }
 },
 {
@@ -59,8 +250,10 @@
   "fields": {
     "ISBN": "9783598215001",
     "title": "The Catcher In The Rye",
-    "description": "The novel details two days in the life of 16-year-old Holden Caulfield after he has been expelled from prep school. Confused and disillusioned, Holden searches for truth and rails against the \u0423phoniness\u0424 of the adult world.",
-    "year_release": 1951
+    "description": "The novel details two days in the life of 16-year-old Holden Caulfield after he has been expelled from prep school. Confused and disillusioned, Holden searches for truth and rails against the УphoninessФ of the adult world.",
+    "year_release": 1951,
+    "author": 3,
+    "current_owner": null
   }
 },
 {
@@ -68,9 +261,11 @@
   "pk": 2,
   "fields": {
     "ISBN": "9783598215018",
-    "title": "\u2560\u0440\u0451\u0404\u0445\u0401 \u0448 \u044c\u0440\u0401\u0443\u0440\u0401\u0448\u0404\u0440",
-    "description": "\u2568\u044e\u044c\u0440\u044d \u043b\u2560\u0440\u0451\u0404\u0445\u0401 \u0448 \u2560\u0440\u0401\u0443\u0440\u0401\u0448\u0404\u0440\u2557 - \u044f\u0401\u044e\u0448\u0447\u0442\u0445\u0444\u0445\u044d\u0448\u0445, \u0442 \u044a\u044e\u0404\u044e\u0401\u044e\u044c \u044d\u0440\u0457\u044e\u0444\u00a0\u0404 \u044e\u0404\u0401\u0440\u0446\u0445\u044d\u0448\u00a0 \u0407\u0448\u044b\u044e\u0451\u044e\u0407\u0451\u044a\u0448\u0445, \u0440 \u0447\u044d\u0440\u045e\u0448\u0404 \u0442\u0445\u045e\u044d\u221a\u0445 \u0404\u0445\u044c\u221a. \u2566\u25a0\u0441\u044e\u0442\u2116 \u0448 \u044f\u0401\u0445\u0444\u0440\u0404\u0445\u044b\u2116\u0451\u0404\u0442\u044e, \u0444\u044e\u0441\u0401\u044e \u0448 \u0447\u044b\u044e, \u0448\u0451\u0404\u0448\u044d\u0440 \u0448 \u044b\u044e\u0446\u2116, \u044f\u044e\u0401\u0440\u0446\u0440\u25a0\u0404 \u0451\u0442\u044e\u0445\u0449 \u0444\u0454\u0440\u044b\u2116\u044d\u044e\u0451\u0404\u2116\u25a0, \u044e\u0404\u0401\u0440\u0446\u0440\u00a0 \u044f\u0401\u044e\u0404\u0448\u0442\u044e\u0401\u0445\u045e\u0448\u0442\u044e\u0451\u0404\u2116 \u0448, \u0442\u044c\u0445\u0451\u0404\u0445 \u0451 \u0404\u0445\u044c, \u044f\u044e\u044b\u044d\u044e\u0404\u0454 \u045e\u0445\u044b\u044e\u0442\u0445\u045e\u0445\u0451\u044a\u044e\u0449 \u044f\u0401\u0448\u0401\u044e\u0444\u221a.",
-    "year_release": 1966
+    "title": "Мастер и Маргарита",
+    "description": "Роман «Мастер и Маргарита» - произведение, в котором находят отражения философские, а значит вечные темы. Любовь и предательство, добро и зло, истина и ложь, поражают своей дуальностью, отражая противоречивость и, вместе с тем, полноту человеческой природы.",
+    "year_release": 1966,
+    "author": 4,
+    "current_owner": null
   }
 },
 {
@@ -78,9 +273,11 @@
   "pk": 3,
   "fields": {
     "ISBN": "9783598215025",
-    "title": "\u2567\u0440\u0401\u0407\u25a0\u044c\u0445\u0401",
-    "description": "\u255e\u0445\u0451\u0404\u044e\u044a\u0448\u0449, \u044d\u0448\u044a\u044e\u0443\u0444\u0440 \u044d\u0445 \u0447\u044d\u0440\u0442\u00b0\u0448\u0449 \u044b\u25a0\u0441\u0442\u0448, \u0451\u0448\u0401\u044e\u0404\u0440 \u255e\u0440\u044d-\u2534\u0440\u0404\u0448\u0451\u0404 \u251c\u0401\u0445\u044d\u0454\u0449 \u044d\u0440\u0451\u0404\u044e\u00a0\u2219\u0448\u0457 \u0454\u0451\u044f\u0445\u0457\u044e\u0442 \u0444\u044e\u0451\u0404\u0448\u0443 \u044b\u0448\u00b0\u2116 \u044d\u0440 \u044e\u0444\u044d\u044e\u044c \u044f\u044e\u044f\u0401\u0448\u2219\u0445 \u0427 \u0451\u0401\u0445\u0444\u0448 \u044f\u0440\u0401\u0407\u25a0\u044c\u0445\u0401\u044e\u0442 \u0445\u044c\u0454 \u044d\u0448\u044a\u044e\u0443\u0444\u0440 \u044d\u0445 \u0441\u221a\u044b\u044e \u0401\u0440\u0442\u044d\u221a\u0457. \u2567\u044e \u0445\u0443\u044e \u0444\u0454\u0457\u0440\u044c \u0451\u0457\u044e\u0444\u0448\u0404 \u0451 \u0454\u044c\u0440 \u0442\u0445\u0451\u2116 \u0442\u221a\u0451\u00b0\u0448\u0449 \u0451\u0442\u0445\u0404, \u044d\u0445 \u044f\u044e\u0444\u044e\u0447\u0401\u0445\u0442\u0440\u00a0 \u044e \u0404\u044e\u044c, \u044a\u0440\u044a\u044e\u0449 \u0451\u0404\u0401\u0440\u00b0\u044d\u044e\u0449 \u040e\u0445\u044d\u044e\u0449 \u0441\u0454\u0444\u0445\u0404 \u044f\u044e\u044b\u0454\u045e\u0445\u044d \u044f\u044e\u0451\u044b\u0445\u0444\u044d\u0448\u0449, \u0448\u0444\u0445\u0440\u044b\u2116\u044d\u221a\u0449 \u0440\u0401\u044e\u044c\u0440\u0404.",
-    "year_release": 1985
+    "title": "Парфюмер",
+    "description": "Жестокий, никогда не знавший любви, сирота Жан-Батист Гренуй настоящих успехов достиг лишь на одном поприще — среди парфюмеров ему никогда не было равных. По его духам сходит с ума весь высший свет, не подозревая о том, какой страшной ценой будет получен последний, идеальный аромат.",
+    "year_release": 1985,
+    "author": 6,
+    "current_owner": 1
   }
 },
 {
@@ -88,9 +285,11 @@
   "pk": 4,
   "fields": {
     "ISBN": "9783598215032",
-    "title": "\u253c\u0442\u0443\u0445\u044d\u0448\u0449 \u256c\u044d\u0445\u0443\u0448\u044d",
-    "description": "\u043b\u253c\u0442\u0443\u0445\u044d\u0448\u0449 \u256c\u044d\u0445\u0443\u0448\u044d\u2557 \u044f\u044e \u044f\u0401\u0440\u0442\u0454 \u0451\u0404\u044e\u0448\u0404 \u044e\u0451\u044e\u0441\u044d\u00a0\u044a\u044e\u044c \u0451\u0401\u0445\u0444\u0448 \u044f\u0401\u044e\u0448\u0447\u0442\u0445\u0444\u0445\u044d\u0448\u0449 \u0401\u0454\u0451\u0451\u044a\u044e\u0449 \u044b\u0448\u0404\u0445\u0401\u0440\u0404\u0454\u0401\u221a 19 \u0442\u0445\u044a\u0440. \u258c\u0404\u044e \u044e\u0444\u044d\u044e \u0448\u0447 \u0451\u0440\u044c\u221a\u0457 \u0443\u0440\u0401\u044c\u044e\u044d\u0448\u045e\u044d\u221a\u0457 \u044f\u044e \u044a\u044e\u044c\u044f\u044e\u0447\u0448\u040e\u0448\u0448 \u0448 \u0441\u044e\u0443\u0440\u0404\u221a\u0457 \u044f\u044e \u0451\u044e\u0444\u0445\u0401\u0446\u0440\u044d\u0448\u25a0 \u044f\u0401\u044e\u0448\u0447\u0442\u0445\u0444\u0445\u044d\u0448\u0449 \u2567\u0454\u00b0\u044a\u0448\u044d\u0440. \u2534\u044b\u0440\u0443\u044e\u0444\u0440\u0401\u00a0 \u0442\u221a\u0401\u0440\u0446\u0445\u044d\u0448\u25a0 \u00a4\u044c\u044e\u040e\u0448\u0449 \u0443\u0445\u0401\u044e\u0445\u0442 \u044f\u044e\u0451\u0401\u0445\u0444\u0451\u0404\u0442\u044e\u044c \u0451\u0404\u0448\u0457\u044e\u0404\u0442\u044e\u0401\u044d\u044e\u0449 \u0407\u044e\u0401\u044c\u221a, \u0401\u044e\u044c\u0440\u044d \u044f\u044e\u044b\u0454\u045e\u0440\u0445\u0404 \u0441\u044e\u044b\u2116\u00b0\u0454\u25a0 \u044b\u0448\u0401\u0448\u045e\u044d\u044e\u0451\u0404\u2116 \u0448 \u0442\u221a\u0401\u0440\u0447\u0448\u0404\u0445\u044b\u2116\u044d\u044e\u0451\u0404\u2116, \u0404\u0440\u044a\u0448\u044c \u044e\u0441\u0401\u0440\u0447\u044e\u044c, \u045e\u0448\u0404\u0440\u0404\u0445\u044b\u25a0 \u0451\u0404\u0440\u044d\u044e\u0442\u0448\u0404\u0451\u00a0 \u044f\u044e\u044d\u00a0\u0404\u044d\u0440 \u0448 \u0444\u044e\u0451\u0404\u0454\u044f\u044d\u0440 \u0442\u0451\u00a0 \u044f\u0440\u044b\u0448\u0404\u0401\u0440 \u045e\u0454\u0442\u0451\u0404\u0442, \u044a\u044e\u0404\u044e\u0401\u0454\u25a0 \u0447\u0440\u044a\u044b\u0440\u0444\u221a\u0442\u0440\u044b \u0442 \u044e\u0451\u044d\u044e\u0442\u0454 \u0440\u0442\u0404\u044e\u0401.",
-    "year_release": 1831
+    "title": "Евгений Онегин",
+    "description": "«Евгений Онегин» по праву стоит особняком среди произведений русской литературы 19 века. Это одно из самых гармоничных по композиции и богатых по содержанию произведений Пушкина. Благодаря выражению эмоций героев посредством стихотворной формы, роман получает большую лиричность и выразительность, таким образом, читателю становится понятна и доступна вся палитра чувств, которую закладывал в основу автор.",
+    "year_release": 1831,
+    "author": 1,
+    "current_owner": 1
   }
 },
 {
@@ -98,9 +297,11 @@
   "pk": 5,
   "fields": {
     "ISBN": "9783598215049",
-    "title": "\u2560\u044e\u0401\u0407\u0448\u0449. \u255f\u0440\u044f\u0448\u0451\u044a\u0448 \u25a0\u044d\u044e\u0443\u044e \u0442\u0401\u0440\u045e\u0440",
-    "description": "\u043b\u2560\u044e\u0401\u0407\u0448\u0449. \u255f\u0440\u044f\u0448\u0451\u044a\u0448 \u25a0\u044d\u044e\u0443\u044e \u0442\u0401\u0440\u045e\u0440\u2557 - \u0454\u044d\u0448\u044a\u0440\u044b\u2116\u044d\u221a\u0449 \u0451\u0441\u044e\u0401\u044d\u0448\u044a \u0401\u0440\u0451\u0451\u044a\u0440\u0447\u044e\u0442 \u2560\u0448\u0457\u0440\u0448\u044b\u0440 \u2534\u0454\u044b\u0443\u0440\u044a\u044e\u0442\u0440, \u044a\u044e\u0404\u044e\u0401\u221a\u0449 \u0401\u0440\u0451\u044a\u0401\u221a\u0442\u0440\u0445\u0404 \u0442\u0440\u0446\u044d\u0454\u25a0, \u044d\u044e \u044d\u0445 \u0442\u0451\u0445\u044c \u0448\u0447\u0442\u0445\u0451\u0404\u044d\u0454\u25a0 \u0451\u0404\u044e\u0401\u044e\u044d\u0454 \u0446\u0448\u0447\u044d\u0448 \u0440\u0442\u0404\u044e\u0401\u0440 - \u044c\u044e\u044b\u044e\u0444\u044e\u0443\u044e \u0442\u0401\u0440\u045e\u0440, \u0448, \u044e\u0444\u044d\u044e\u0442\u0401\u0445\u044c\u0445\u044d\u044d\u044e, \u044f\u0440\u040e\u0448\u0445\u044d\u0404\u0440, \u044f\u0401\u0448\u0451\u0404\u0401\u0440\u0451\u0404\u0448\u0442\u00b0\u0445\u0443\u044e\u0451\u00a0 \u044a \u0444\u044e\u0447\u0440\u044c \u044c\u044e\u0401\u0407\u0448\u044d\u0440 \u0448 \u044f\u221a\u0404\u0440\u25a0\u2219\u0445\u0443\u044e\u0451\u00a0 \u0442\u221a\u0401\u0442\u0440\u0404\u2116\u0451\u00a0 \u0448\u0447 \u044d\u0440\u0401\u044a\u044e\u0404\u0448\u045e\u0445\u0451\u044a\u044e\u0443\u044e \u044f\u044b\u0445\u044d\u0440. \u2534\u0454\u044b\u0443\u0440\u044a\u044e\u0442\u0454 \u0454\u0444\u0440\u044b\u044e\u0451\u2116 \u044f\u0454\u0443\u0440\u25a0\u2219\u0445 \u044f\u044e\u0444\u0401\u044e\u0441\u044d\u044e \u044e\u044f\u0448\u0451\u0440\u0404\u2116 \u044e\u2219\u0454\u2219\u0445\u044d\u0448\u00a0 \u044c\u044e\u0401\u0407\u0448\u044d\u0448\u0451\u0404\u0440, \u0442\u0451\u25a0 \u0443\u044b\u0454\u0441\u0448\u044d\u0454 \u044e\u0404\u045e\u0440\u00a0\u044d\u0448\u00a0 \u0448 \u0441\u0445\u0451\u044a\u044e\u044d\u0445\u045e\u044d\u0454\u25a0 \u044d\u0440\u0444\u0445\u0446\u0444\u0454 \u044d\u0440 \u044e\u0451\u0442\u044e\u0441\u044e\u0446\u0444\u0445\u044d\u0448\u0445 \u044e\u0404 \u0401\u0440\u0447\u0401\u0454\u00b0\u0440\u25a0\u2219\u0445\u0449 \u0447\u0440\u0442\u0448\u0451\u0448\u044c\u044e\u0451\u0404\u0448.",
-    "year_release": 1925
+    "title": "Морфий. Записки юного врача",
+    "description": "«Морфий. Записки юного врача» - уникальный сборник рассказов Михаила Булгакова, который раскрывает важную, но не всем известную сторону жизни автора - молодого врача, и, одновременно, пациента, пристрастившегося к дозам морфина и пытающегося вырваться из наркотического плена. Булгакову удалось пугающе подробно описать ощущения морфиниста, всю глубину отчаяния и бесконечную надежду на освобождение от разрушающей зависимости.",
+    "year_release": 1925,
+    "author": 4,
+    "current_owner": 3
   }
 },
 {
@@ -109,8 +310,10 @@
   "fields": {
     "ISBN": "9783598215056",
     "title": "1984",
-    "description": "\u043b1984\u2557 is a dystopian novella by George Orwell published in 1949, which follows the life of Winston Smith, a low ranking member of 'the Party', who is frustrated by the omnipresent eyes of the party, and its ominous ruler Big Brother. 'Big Brother' controls every aspect of people's lives.",
-    "year_release": 1949
+    "description": "«1984» is a dystopian novella by George Orwell published in 1949, which follows the life of Winston Smith, a low ranking member of 'the Party', who is frustrated by the omnipresent eyes of the party, and its ominous ruler Big Brother. 'Big Brother' controls every aspect of people's lives.",
+    "year_release": 1949,
+    "author": 6,
+    "current_owner": null
   }
 },
 {
@@ -118,9 +321,11 @@
   "pk": 7,
   "fields": {
     "ISBN": "9783598215063",
-    "title": "\u2560\u2555\u0401\u0404\u0442\u221a\u0445 \u0444\u0454\u00b0\u0448",
-    "description": "\u2567\u044e\u00a4\u044c\u0440 \u043b\u2560\u0445\u0401\u0404\u0442\u221a\u0445 \u0444\u0454\u00b0\u0448\u2557 \u0441\u221a\u044b\u0440 \u0447\u0440\u0444\u0454\u044c\u0440\u044d\u0440 \u251c\u044e\u0443\u044e\u044b\u0445\u044c \u044a\u0440\u044a \u0443\u0401\u0440\u044d\u0444\u0448\u044e\u0447\u044d\u0440\u00a0 \u044f\u0440\u044d\u044e\u0401\u0440\u044c\u0440 \u0401\u044e\u0451\u0451\u0448\u0449\u0451\u044a\u044e\u0443\u044e \u044e\u0441\u2219\u0445\u0451\u0404\u0442\u0440 \u0451\u044e \u0442\u0451\u0445\u044c\u0448 \u0445\u0443\u044e \u044e\u0451\u044e\u0441\u0445\u044d\u044d\u044e\u0451\u0404\u00a0\u044c\u0448 \u0448 \u044f\u0440\u0401\u0440\u0444\u044e\u044a\u0451\u0440\u044c\u0448. \u2553\u0445\u044d\u0404\u0401\u0440\u044b\u2116\u044d\u0440\u00a0 \u044f\u0401\u044e\u0441\u044b\u0445\u044c\u0440 \u044f\u0401\u044e\u0448\u0447\u0442\u0445\u0444\u0445\u044d\u0448\u00a0 \u0426 \u0444\u0454\u0457\u044e\u0442\u044d\u0440\u00a0 \u0451\u044c\u0445\u0401\u0404\u2116 \u0448 \u0442\u044e\u0447\u0401\u044e\u0446\u0444\u0445\u044d\u0448\u0445 \u044f\u0401\u0445\u0444\u0451\u0404\u0440\u0442\u0448\u0404\u0445\u044b\u0445\u0449 \u044e\u0451\u044d\u044e\u0442\u044d\u221a\u0457 \u0401\u044e\u0451\u0451\u0448\u0449\u0451\u044a\u0448\u0457 \u0451\u044e\u0451\u044b\u044e\u0442\u0448\u0449 \u0404\u044e\u0443\u044e \u0442\u0401\u0445\u044c\u0445\u044d\u0448.",
-    "year_release": 1842
+    "title": "Мёртвые души",
+    "description": "Поэма «Мёртвые души» была задумана Гоголем как грандиозная панорама российского общества со всеми его особенностями и парадоксами. Центральная проблема произведения – духовная смерть и возрождение представителей основных российских сословий того времени.",
+    "year_release": 1842,
+    "author": 2,
+    "current_owner": 1
   }
 },
 {
@@ -128,9 +333,29 @@
   "pk": 8,
   "fields": {
     "ISBN": "9783598215070",
-    "title": "\u2564\u044e\u0441\u0440\u045e\u2116\u0445 \u0451\u0445\u0401\u0444\u040e\u0445",
-    "description": "\u2567\u0401\u044e\u0407\u0445\u0451\u0451\u044e\u0401 \u2567\u0401\u0445\u044e\u0441\u0401\u0440\u0446\u0445\u044d\u0451\u044a\u0448\u0449 \u0451\u0404\u0440\u0442\u0448\u0404 \u0451\u044c\u0445\u044b\u221a\u0445 \u044e\u044f\u221a\u0404\u221a, \u044f\u221a\u0404\u0440\u00a0\u0451\u2116 \u044f\u0401\u0445\u0442\u0401\u0440\u0404\u0448\u0404\u2116 \u0451\u044e\u0441\u0440\u044a\u0454 \u256a\u0440\u0401\u0448\u044a\u0440 \u0442 \u0401\u0440\u0442\u044d\u044e\u0443\u044e \u0451\u0445\u0441\u0445 \u0442\u044e \u0442\u0451\u0445\u044c \u045e\u0445\u044b\u044e\u0442\u0445\u044a\u0440. \u252c \u0401\u0445\u0447\u0454\u044b\u2116\u0404\u0440\u0404\u0445 \u044f\u044e\u044b\u0454\u045e\u0440\u0445\u0404\u0451\u00a0 \u044d\u0445\u044a\u0404\u044e \u256a\u0440\u0401\u0448\u044a\u044e\u0442. \u2569 \u0451\u044e\u0446\u0440\u044b\u0445\u044d\u0448\u25a0, \u044e\u044f\u221a\u0404 \u0444\u044e\u044a\u0440\u0447\u221a\u0442\u0440\u0445\u0404, \u045e\u0404\u044e \u0451\u044e\u0441\u0440\u044a\u0445 \u044b\u0454\u045e\u00b0\u0445 \u044e\u0451\u0404\u0440\u0442\u0440\u0404\u2116\u0451\u00a0 \u0451\u044e\u0441\u0440\u044a\u044e\u0449.",
-    "year_release": 1925
+    "title": "Собачье сердце",
+    "description": "Профессор Преображенский ставит смелые опыты, пытаясь превратить собаку Шарика в равного себе во всем человека. В результате получается некто Шариков. К сожалению, опыт доказывает, что собаке лучше оставаться собакой.",
+    "year_release": 1925,
+    "author": 4,
+    "current_owner": 1
+  }
+},
+{
+  "model": "library.debt",
+  "pk": 1,
+  "fields": {
+    "usurer": 3,
+    "debtor": 2,
+    "book": 2
+  }
+},
+{
+  "model": "library.debt",
+  "pk": 2,
+  "fields": {
+    "usurer": 3,
+    "debtor": 1,
+    "book": 6
   }
 }
 ]

@@ -1,0 +1,13 @@
+{% extends 'table_display.html' %}
+
+{% block tablehead %}
+    <th scope="col">Full name</th>
+    <th scope="col">Birth year</th>
+    <th scope="col">Country</th>
+{% endblock %}
+
+{% block tablebody %}
+    <td>{{ object.full_name }}</td>
+    <td>{{ object.birth_year }}</td>
+    <td>{{ object.country }}</td>
+{% endblock %}

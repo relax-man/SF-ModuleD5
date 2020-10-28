@@ -1,38 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+
+{% load staticfiles %}
+
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/css/jasny-bootstrap.min.css">
+
+    <title>{{ title|title }}</title>
 </head>
 <body>
-    <div class="container py-4">
-        <div class="dropdown mb-4">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Menu
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                <a class="dropdown-item" href="{% url 'library:authors_list' %}">
-                    Authors list
-                </a>
-                <a class="dropdown-item" href="{% url 'library:author_create' %}">
-                    Create 1 form
-                </a>
-                <a class="dropdown-item" href="{% url 'library:author_create_many' %}">
-                    Create 2 forms
-                </a>
-            </div>
-        </div>
+    <nav
+      class="navmenu navmenu-inverse navmenu-fixed-left offcanvas"
+      id="navmenu" role="navigation" style="background-color: #343A40;"
+    >
+      <a class="navmenu-brand" href="{% url 'library:home' %}">
+          <i class="fas fa-book"></i>
+          Library
+      </a>
 
-        {% block content %}
-        {% endblock %}
+      <ul class="nav navmenu-nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'library:author_list' %}">Authors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'library:book_list' %}">Books</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'library:friend_list' %}">Friends</a>
+        </li>
+      </ul>
+    </nav>
+
+    <header class="navbar navbar-dark bg-dark sticky-top">
+      <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#navmenu" data-canvas="body">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </header>
+
+    <div class="container py-4">
+      {% block content %}
+      {% endblock %}
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/04a7c4bbdc.js" crossorigin="anonymous"></script>
 </body>
 </html>

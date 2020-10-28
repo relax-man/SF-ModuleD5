@@ -1,0 +1,22 @@
+{% extends 'form_display.html' %}
+{% load crispy_forms_tags %}
+
+{% block form %}
+
+<form method="post" class="row" >
+    {% csrf_token %}
+
+    <div class="col-12">
+        {{ form|crispy }}
+    </div>
+
+    <input
+        type="submit"
+        value="Save"
+        class="col col-md-3 btn btn-primary ml-md-auto"
+        style="margin: 15px;"
+        formnovalidate
+    />
+</form>
+
+{% endblock %}

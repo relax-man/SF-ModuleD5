@@ -3,8 +3,39 @@ from library import views
 
 app_name = 'library'
 urlpatterns = [
-    path('', views.home_page, name="home"),
-    path('author/create/', views.AuthorEdit.as_view(), name="author_create"),
-    path('authors/', views.AuthorList.as_view(), name="authors_list"),
-    path('author/create_many/', views.create_author_many, name="author_create_many")
+    path(
+        '',
+        views.home_page,
+        name="home"
+    ),
+    path(
+        'author/',
+        views.AuthorList.as_view(),
+        name="author_list"
+    ),
+    path(
+        'author/create/',
+        views.AuthorCreate.as_view(),
+        name="author_create"
+    ),
+    path(
+        'book/',
+        views.BookList.as_view(),
+        name="book_list"
+    ),
+    path(
+        'book/create/',
+        views.BookCreate.as_view(),
+        name="book_create"
+    ),
+    path(
+        'friend/',
+        views.FriendList.as_view(),
+        name="friend_list"
+    ),
+    path(
+        'friend/create/',
+        views.FriendCreate.as_view(),
+        name="friend_create"
+    )
 ]

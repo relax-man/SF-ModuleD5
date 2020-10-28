@@ -1,5 +1,13 @@
 from django.contrib import admin
-from library.models import Author, Book
+from .models import *
+
+@admin.register(Address)
+class AddressAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Friend)
+class FriendAdmin(admin.ModelAdmin):
+    pass
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
@@ -7,7 +15,8 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    fields = ('ISBN', 'title', 'description',
-              'year_release')
+    pass
 
-
+@admin.register(Debt)
+class DebtAdmin(admin.ModelAdmin):
+    pass

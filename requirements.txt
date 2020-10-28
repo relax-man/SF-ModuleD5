@@ -1,4 +1,7 @@
-django
+django==2.2.6
+django_cleanup
 psycopg2
-django-bootstrap4
 dj_database_url
+django-crispy-forms
+geonamescache
+pillow
