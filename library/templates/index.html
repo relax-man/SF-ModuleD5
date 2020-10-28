@@ -13,7 +13,7 @@
 
     <title>{{ title|title }}</title>
 </head>
-<body>
+<body class="position-relative">
     <nav
       class="navmenu navmenu-inverse navmenu-fixed-left offcanvas"
       id="navmenu" role="navigation" style="background-color: #343A40;"
@@ -45,10 +45,9 @@
     <div class="container py-4">
       {% block content %}
           <div class="jumbotron mt-3">
-              <h1 class="display-4">Hello to my library!</h1>
+              <h1 class="display-4">Welcome to my library!</h1>
               <p class="lead">Push toggle button to start</p>
               <hr class="my-5">
-{#              <p>Here it is </p>#}
               <button class="btn btn-light btn-lg w-100" data-toggle="offcanvas" data-target="#navmenu">
                   Start
               </button>

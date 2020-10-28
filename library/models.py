@@ -1,5 +1,6 @@
 from django.db import models
 import geonamescache
+import cloudinary
 
 GC = geonamescache.GeonamesCache()
 COUNTRIES_AUTHOR = [(c['name'], c['name']) for c in GC.get_countries().values()]
@@ -35,6 +36,12 @@ class Friend(models.Model):
         through='Debt',
         symmetrical=False
     )
+
+    @property
+    def avatar_compress_url(self):
+        return cloudinary.CloudinaryImage(self.avatar.name).build_url(
+            width=200, quality='auto', fetch_format='auto'
+        )
 
     class Meta:
         verbose_name = 'Друг'
