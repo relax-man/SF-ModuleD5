@@ -5,3 +5,5 @@ dj_database_url
 django-crispy-forms
 geonamescache
 pillow
+cloudinary==1.17.0
+django-cloudinary-storage==0.2.3

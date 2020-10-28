@@ -5,6 +5,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 if os.environ.get('SECRET_KEY'):
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': 'hiianosdu',
+        'API_KEY': '613229427197363',
+        'API_SECRET': os.environ.get('CLOUDINARY_KEY'),
+    }
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
     DEBUG = False
 else:
     SECRET_KEY = open("secret_key.txt").read()
@@ -20,9 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'django_cleanup',
     'library',
+    'cloudinary',
     'crispy_forms'
 ]
 
@@ -97,6 +105,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hiianosdu',
+    'API_KEY': '613229427197363',
+    'API_SECRET': 'd5UL3l16e15WMRQ6qZKK1pPNcCk',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
