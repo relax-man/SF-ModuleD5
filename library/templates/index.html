@@ -37,13 +37,22 @@
     </nav>
 
     <header class="navbar navbar-dark bg-dark sticky-top">
-      <button class="navbar-toggler" type="button" data-toggle="offcanvas" data-target="#navmenu" data-canvas="body">
+      <button class="navbar-toggler" data-toggle="offcanvas" data-target="#navmenu">
         <span class="navbar-toggler-icon"></span>
       </button>
     </header>
 
     <div class="container py-4">
       {% block content %}
+          <div class="jumbotron mt-3">
+              <h1 class="display-4">Hello to my library!</h1>
+              <p class="lead">Push toggle button to start</p>
+              <hr class="my-5">
+{#              <p>Here it is </p>#}
+              <button class="btn btn-light btn-lg w-100" data-toggle="offcanvas" data-target="#navmenu">
+                  Start
+              </button>
+          </div>
       {% endblock %}
     </div>
 

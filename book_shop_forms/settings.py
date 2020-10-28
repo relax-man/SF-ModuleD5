@@ -1,24 +1,35 @@
 import os
+import json
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Heroku settings
 if os.environ.get('SECRET_KEY'):
     SECRET_KEY = os.environ.get('SECRET_KEY')
     CLOUDINARY_STORAGE = {
         'CLOUD_NAME': 'hiianosdu',
-        'API_KEY': '613229427197363',
-        'API_SECRET': os.environ.get('CLOUDINARY_KEY'),
+        'API_KEY': os.environ.get('CLOUDINARY_KEY'),
+        'API_SECRET': os.environ.get('CLOUDINARY_SECRET'),
     }
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
     DEBUG = False
+
+# Local settings
 else:
-    SECRET_KEY = open("secret_key.txt").read()
+    secret_keys = json.load(open("secret_keys.json"))
+
+    SECRET_KEY = secret_keys['secret_key']
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': 'hiianosdu',
+        'API_KEY': secret_keys['cloudinary_key'],
+        'API_SECRET': secret_keys['cloudinary_secret'],
+    }
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
     DEBUG = True
 
 
 ALLOWED_HOSTS = ['127.0.0.1', 'hidden-anchorage-33665.herokuapp.com']
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -105,13 +116,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hiianosdu',
-    'API_KEY': '613229427197363',
-    'API_SECRET': 'd5UL3l16e15WMRQ6qZKK1pPNcCk',
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
