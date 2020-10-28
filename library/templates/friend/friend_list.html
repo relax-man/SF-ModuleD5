@@ -3,8 +3,8 @@
 {% block tablehead %}
     <th scope="col">Avatar</th>
     <th scope="col">Name</th>
-    <th scope="col">Address</th>
-    <th scope="col">Debtors</th>
+    <th class="d-none d-md-table-cell" scope="col">Address</th>
+    <th class="d-none d-md-table-cell" scope="col">Debtors</th>
 {% endblock %}
 
 {% block tablebody %}
@@ -31,12 +31,12 @@
     <td>
         {{ object.full_name }}
     </td>
-    <td>
+    <td class="d-none d-md-table-cell">
         {% for address in object.address_set.all %}
             {{ address }}<br>
         {% endfor %}
     </td>
-    <td>
+    <td class="d-none d-md-table-cell">
         {% for debt in object.debt_set.all %}
             {{ debt.debtor }} - {{ debt.book }}<br>
         {% endfor %}
