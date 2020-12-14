@@ -4,32 +4,6 @@ import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Heroku settings
-if os.environ.get('SECRET_KEY'):
-    SECRET_KEY = os.environ.get('SECRET_KEY')
-    CLOUDINARY_STORAGE = {
-        'CLOUD_NAME': 'hiianosdu',
-        'API_KEY': os.environ.get('CLOUDINARY_KEY'),
-        'API_SECRET': os.environ.get('CLOUDINARY_SECRET'),
-    }
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    DEBUG = False
-
-# Local settings
-else:
-    secret_keys = json.load(open("secret_keys.json"))
-
-    SECRET_KEY = secret_keys['secret_key']
-    CLOUDINARY_STORAGE = {
-        'CLOUD_NAME': 'hiianosdu',
-        'API_KEY': secret_keys['cloudinary_key'],
-        'API_SECRET': secret_keys['cloudinary_secret'],
-    }
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    DEBUG = True
-
-
-ALLOWED_HOSTS = ['127.0.0.1', 'hidden-anchorage-33665.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,7 +31,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'book_shop_forms.urls'
+ROOT_URLCONF = 'config.urls'
 
 
 TEMPLATES = [
@@ -76,19 +50,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'book_shop_forms.wsgi.application'
-
-
-DATABASES = {
-    'default':
-        dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-
-        if os.environ.get('DATABASE_URL') else
-        {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
-        }
-}
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 AUTH_PASSWORD_VALIDATORS = [

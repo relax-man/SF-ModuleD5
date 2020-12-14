@@ -1,5 +1,7 @@
-.idea
-__pycache__
-db.sqlite3
+.vscode/
+.idea/
 
-secret_keys.json
+__pycache__/
+env/
+
+db.sqlite3
